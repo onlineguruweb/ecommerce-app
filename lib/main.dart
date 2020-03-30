@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
+import 'package:fashapp/components/horizontal_listview.dart';
+
 void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
   home: Homepage(),
@@ -20,9 +22,9 @@ class _HomepageState extends State<Homepage> {
     child: Carousel(
       boxFit: BoxFit.cover,
       images: [
-        AssetImage('images/products/1.png'),
-        AssetImage('images/products/2.jpg'),
-        AssetImage('images/products/3.jpg'),
+        AssetImage('images/slide/1.png'),
+        AssetImage('images/slide/2.jpg'),
+        AssetImage('images/slide/3.jpg'),
       ],
       autoplay: false,
       animationCurve: Curves.fastOutSlowIn,
@@ -36,7 +38,7 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title:Text('Flipkart',style: TextStyle(fontStyle: FontStyle.italic),),
+        title:Text('EazyCart',style: TextStyle(fontStyle: FontStyle.italic),),
         actions: <Widget>[
           IconButton(icon: Icon(Icons.search,color: Colors.white), onPressed: (null)),
           IconButton(icon: Icon(Icons.shopping_cart,color: Colors.white), onPressed: (null)),
@@ -109,7 +111,21 @@ class _HomepageState extends State<Homepage> {
       ),//drawer
       body: ListView(
         children: <Widget>[
+         //image carousel
           image_carousel,
+         
+         //padding widget
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+            'Categories',
+            style: TextStyle(
+              fontSize: 25.0,
+            ),
+            ),
+          ),
+          HorizontalList(),
+          //
         ],
       ),
     );
