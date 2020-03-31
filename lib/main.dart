@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
 import 'package:fashapp/components/horizontal_listview.dart';
+import 'package:fashapp/components/products.dart';
 
 void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
@@ -114,7 +115,7 @@ class _HomepageState extends State<Homepage> {
          //image carousel
           image_carousel,
          
-         //padding widget
+         //padding widget for categories
           Padding(
             padding: EdgeInsets.all(8.0),
             child: Text(
@@ -124,7 +125,25 @@ class _HomepageState extends State<Homepage> {
             ),
             ),
           ),
+          // category name and images
           HorizontalList(),
+
+          //padding widget for recent products
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+            'Recent Products',
+            style: TextStyle(
+              fontSize: 25.0,
+            ),
+            ),
+          ),
+          //grid view for recent products
+          Container(
+            height: 320.0,
+            child: Products(),
+          )
+
           //
         ],
       ),
